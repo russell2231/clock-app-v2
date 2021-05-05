@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+html {
+	font-size: 62.5%;
+	font-family: $font;
+}
+
+.text-xxl {
+	font-size: 10rem;
+	line-height: 1;
+	letter-spacing: -2.5px;
+	font-weight: bold;
+
+	@include respond-to(small) {
+		font-size: 17.5rem;
+		letter-spacing: -4.38px;
+	}
+	@include respond-to(large) {
+		font-size: 20rem;
+		letter-spacing: -5px;
+	}
+}
+
+.text-xl {
+	font-size: 2rem;
+	font-weight: bold;
+
+	@include respond-to(small) {
+		font-size: 4rem;
+	}
+	@include respond-to(large) {
+		font-size: 5.6rem;
+	}
+}
+
+.text-l {
+	font-size: 1.5rem;
+	line-height: 1.6;
+	letter-spacing: 3px;
+
+	@include respond-to(small) {
+		font-size: 1.8rem;
+		letter-spacing: 3.6px;
+		line-height: 1.5;
+	}
+	@include respond-to(large) {
+		font-size: 2rem;
+		letter-spacing: 4px;
+		line-height: 1.4;
+	}
+}
+
+.text-m {
+	font-size: 1.2rem;
+	line-height: 1.8;
+
+	@include respond-to(small) {
+		font-size: 1.8rem;
+		line-height: 1.5;
+	}
+}
+
+.text-s {
+	font-size: 1rem;
+	letter-spacing: 2px;
+
+	@include respond-to(small) {
+		font-size: 1.3rem;
+		letter-spacing: 2.6px;
+	}
+	@include respond-to(large) {
+		font-size: 1.5rem;
+		letter-spacing: 3px;
+	}
+}
