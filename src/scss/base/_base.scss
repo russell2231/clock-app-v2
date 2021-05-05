@@ -3,3 +3,64 @@
 *::after {
 	box-sizing: border-box;
 }
+
+.App {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 31px 0 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	@include respond-to(small) {
+		padding: 8rem 0 6.4rem;
+	}
+	@include respond-to(large) {
+		padding: 5.6rem 0 9.8rem;
+	}
+}
+
+// Day Background
+
+.App.day {
+	background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+		url(../images/mobile/bg-image-daytime.jpg) no-repeat center/cover;
+	color: #fff;
+
+	@include respond-to(small) {
+		background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+			url(../images/tablet/bg-image-daytime.jpg) no-repeat center/ cover;
+	}
+	@include respond-to(large) {
+		background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+			url(../images/desktop/bg-image-daytime.jpg) no-repeat center/ cover;
+	}
+
+	.clock-info {
+		background: rgba(#fff, 0.75);
+		color: #000;
+	}
+}
+
+.App.night {
+	background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+		url(../images/mobile/bg-image-nighttime.jpg) no-repeat center/cover;
+	color: #fff;
+
+	@include respond-to(small) {
+		background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+			url(../images/tablet/bg-image-nighttime.jpg) no-repeat center/ cover;
+	}
+	@include respond-to(large) {
+		background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+			url(../images/desktop/bg-image-nighttime.jpg) no-repeat center/ cover;
+	}
+
+	.clock-info {
+		background: rgba(#000, 0.75);
+		color: #fff;
+	}
+}

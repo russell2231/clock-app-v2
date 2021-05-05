@@ -1,0 +1,130 @@
+.clock {
+	padding-top: 6.9rem;
+	display: flex;
+	flex-direction: column;
+
+	@include respond-to(small) {
+		padding-top: 7.3rem;
+	}
+	@include respond-to(large) {
+		flex-direction: row;
+		align-items: flex-end;
+		justify-content: space-between;
+		padding-top: 5.6rem;
+	}
+
+	.clock-greeting-container {
+		text-transform: uppercase;
+		display: flex;
+		margin: 0;
+
+		.clock-greet {
+			margin-left: 1.6rem;
+		}
+	}
+
+	.clock-time {
+		margin: 1.6rem 0 4.8rem;
+
+		@include respond-to(large) {
+			margin-bottom: 0;
+		}
+
+		.clock-timezone {
+			font-size: 1.5rem;
+			letter-spacing: 0;
+			margin-left: 0.8rem;
+			font-weight: 300;
+
+			@include respond-to(small) {
+				font-size: 3.2rem;
+			}
+			@include respond-to(large) {
+				font-size: 4rem;
+			}
+		}
+	}
+
+	.btn {
+		@include respond-to(large) {
+			align-self: unset;
+		}
+	}
+
+	.clock-info {
+		display: none;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		backdrop-filter: blur(15px);
+		color: black;
+		padding: 4.8rem 0;
+
+		@include respond-to(small) {
+			padding: 11.9rem 0;
+		}
+		@include respond-to(large) {
+			padding: 7.4rem 0;
+		}
+
+		&.expanded {
+			display: block;
+		}
+
+		.clock-info-container {
+			@include respond-to(small) {
+				display: grid;
+				grid-template-columns: 2fr 1fr;
+				row-gap: 4.8rem;
+				column-gap: 8rem;
+				position: relative;
+
+				&:before {
+					content: '';
+					height: 100%;
+					width: 1px;
+					background: rgba(0, 0, 0, 0.25);
+					position: absolute;
+					left: 57%;
+				}
+			}
+			@include respond-to(large) {
+				row-gap: 4.2rem;
+				column-gap: 8rem;
+
+				&:before {
+					left: 50%;
+				}
+			}
+		}
+
+		.topic {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: 1.8rem;
+
+			@include respond-to(small) {
+				flex-direction: column;
+				align-items: flex-start;
+				margin-bottom: 0;
+			}
+
+			.clock-info-title {
+				margin: 0;
+				font-weight: normal;
+				text-transform: uppercase;
+
+				@include respond-to(small) {
+					margin-bottom: 1rem;
+				}
+			}
+
+			.clock-info-data {
+				font-weight: 700;
+				margin: 0;
+			}
+		}
+	}
+}

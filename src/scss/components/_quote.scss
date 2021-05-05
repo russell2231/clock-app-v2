@@ -1,0 +1,35 @@
+.quote {
+	&.expanded {
+		display: none;
+	}
+
+	.quote-container {
+		margin: 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: stretch;
+
+		@include respond-to(large) {
+			width: 51%;
+		}
+
+		.quote-content {
+			width: 90%;
+			margin-top: 0;
+			margin-bottom: 0.8rem;
+
+			@include respond-to(small) {
+				position: relative;
+				top: -10px;
+			}
+		}
+
+		.refresh {
+			align-self: flex-start;
+			cursor: pointer;
+		}
+	}
+	.quote-author {
+		font-weight: bold;
+	}
+}

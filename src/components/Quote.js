@@ -11,18 +11,17 @@ const Quote = ({ quoteData, isExpanded }) => {
 	};
 
 	return (
-		<figure
-			className={`container quote-container ${isExpanded ? 'expanded' : ''}`}
-		>
-			<blockquote className='quote'>
-				<p>{data.content}</p>
+		<figure className={`container quote ${isExpanded ? 'expanded' : ''}`}>
+			<blockquote className='text-m quote-container'>
+				<p className='quote-content'>{`"${data.content}"`}</p>
 				<img
 					src={require('../images/icons/icon-refresh.png').default}
 					alt=''
+					className='refresh'
 					onClick={handleQuote}
 				/>
 			</blockquote>
-			<figcaption className='author'>{data.author}</figcaption>
+			<figcaption className='text-m quote-author'>{data.author}</figcaption>
 		</figure>
 	);
 };

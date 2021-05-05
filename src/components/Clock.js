@@ -30,22 +30,22 @@ const Clock = ({ clockData, isExpanded, setIsExpanded }) => {
 
 	return (
 		<>
-			<div className='container clock-container'>
+			<div className='container clock'>
 				<div className='clock-heading'>
-					<p className='greeting'>
+					<p className='text-l clock-greeting-container'>
 						<span className='time-icon'>
 							<img
 								src={require('../images/icons/icon-sun.svg').default}
 								alt=''
 							/>
 						</span>
-						<span className='greet'>
+						<span className='clock-greet'>
 							Good Morning<span>, it's currently</span>
 						</span>
 					</p>
-					<h1 className='time'>
+					<h1 className='text-xxl clock-time'>
 						{`${hours}:${pad(minutes)}`}
-						<span className='timezone-abr'>{clockData.abbreviation}</span>
+						<span className='clock-timezone'>{clockData.abbreviation}</span>
 					</h1>
 				</div>
 				<button className='btn' onClick={handleShowMore}>
@@ -57,23 +57,23 @@ const Clock = ({ clockData, isExpanded, setIsExpanded }) => {
 					/>
 				</button>
 
-				<div className={`time-info ${isExpanded ? 'expanded' : ''}`}>
-					<div className='container time-info-container'>
+				<div className={`clock-info ${isExpanded ? 'expanded' : ''}`}>
+					<div className='container clock-info-container'>
 						<div className='topic'>
-							<h2>Current Timezone</h2>
-							<p className='long'>{clockData.timezone}</p>
+							<h2 className='text-s clock-info-title'>Current Timezone</h2>
+							<p className='text-xl clock-info-data'>{clockData.timezone}</p>
 						</div>
 						<div className='topic'>
-							<h2>Day of the year</h2>
-							<p>{clockData.day_of_year}</p>
+							<h2 className='text-s clock-info-title'>Day of the year</h2>
+							<p className='text-xl clock-info-data'>{clockData.day_of_year}</p>
 						</div>
 						<div className='topic'>
-							<h2>day of the week</h2>
-							<p>{clockData.day_of_week}</p>
+							<h2 className='text-s clock-info-title'>day of the week</h2>
+							<p className='text-xl clock-info-data'>{clockData.day_of_week}</p>
 						</div>
 						<div className='topic'>
-							<h2>Week number</h2>
-							<p>{clockData.week_number}</p>
+							<h2 className='text-s clock-info-title'>Week number</h2>
+							<p className='text-xl clock-info-data'>{clockData.week_number}</p>
 						</div>
 					</div>
 				</div>

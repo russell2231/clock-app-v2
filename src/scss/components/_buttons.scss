@@ -1,0 +1,26 @@
+.btn {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	font-size: 1.2rem;
+	letter-spacing: 3.75px;
+	text-transform: uppercase;
+	padding: 0.4rem 0.4rem 0.4rem 1.2rem;
+	align-self: flex-start;
+	border-radius: 28px;
+	border: none;
+	font-weight: 700;
+	color: rgba(#000, 0.5);
+	background: #fff;
+
+	@include respond-to(small) {
+		font-size: 1.6rem;
+		letter-spacing: 5px;
+		padding: 0.8rem 0.8rem 0.8rem 2.1rem;
+	}
+}
+
+.btn-icon {
+	margin-left: 1.1rem;
+	transform: rotate(180deg);
+}
