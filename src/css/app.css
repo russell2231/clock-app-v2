@@ -450,6 +450,22 @@ html {
   }
 }
 
+.text-long {
+  font-size: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .text-long {
+    font-size: 2.8rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .text-long {
+    font-size: 4.6rem;
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -513,6 +529,10 @@ html {
   color: #000;
 }
 
+.App.day .clock-info .clock-info-container:before {
+  background: rgba(0, 0, 0, 0.25);
+}
+
 .App.night {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url(../images/mobile/bg-image-nighttime.jpg) no-repeat center/cover;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/mobile/bg-image-nighttime.jpg) no-repeat center/cover;
@@ -536,6 +556,10 @@ html {
 .App.night .clock-info {
   background: rgba(0, 0, 0, 0.75);
   color: #fff;
+}
+
+.App.night .clock-info .clock-info-container:before {
+  background: rgba(255, 255, 255, 0.25);
 }
 
 .btn {
@@ -698,7 +722,6 @@ html {
     content: '';
     height: 100%;
     width: 1px;
-    background: rgba(0, 0, 0, 0.25);
     position: absolute;
     left: 57%;
   }

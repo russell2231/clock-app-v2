@@ -42,6 +42,10 @@
 	.clock-info {
 		background: rgba(#fff, 0.75);
 		color: #000;
+
+		.clock-info-container:before {
+			background: rgba(0, 0, 0, 0.25);
+		}
 	}
 }
 
@@ -62,5 +66,9 @@
 	.clock-info {
 		background: rgba(#000, 0.75);
 		color: #fff;
+
+		.clock-info-container:before {
+			background: rgba(255, 255, 255, 0.25);
+		}
 	}
 }

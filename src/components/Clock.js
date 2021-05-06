@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 
-const Clock = ({ clockData, isExpanded, setIsExpanded }) => {
-	const [date, setDate] = useState(new Date());
+const Clock = ({ clockData, isExpanded, setIsExpanded, date, setDate }) => {
+	const hours = date.getHours();
+	const minutes = date.getMinutes();
 
 	const pad = (time) => {
 		if (time < 10) {
@@ -11,6 +12,23 @@ const Clock = ({ clockData, isExpanded, setIsExpanded }) => {
 		}
 	};
 
+	let timeOfDay =
+		hours > 4 && hours < 12
+			? 'Morning'
+			: hours >= 12 && hours < 18
+			? 'Afternoon'
+			: 'Evening';
+	const days = [
+		'Sunday',
+		'Monday',
+		'Tuesday',
+		'Wednesday',
+		'Thursday',
+		'Friday',
+		'Saturday',
+	];
+	let timezone = clockData.timezone.replace('_', ' ');
+
 	const handleShowMore = () => {
 		if (isExpanded) {
 			setIsExpanded(false);
@@ -19,15 +37,6 @@ const Clock = ({ clockData, isExpanded, setIsExpanded }) => {
 		}
 	};
 
-	const hours = date.getHours();
-	const minutes = date.getMinutes();
-
-	useEffect(() => {
-		setInterval(() => {
-			setDate(new Date());
-		}, 1000);
-	}, []);
-
 	return (
 		<>
 			<div className='container clock'>
@@ -35,16 +44,20 @@ const Clock = ({ clockData, isExpanded, setIsExpanded }) => {
 					<p className='text-l clock-greeting-container'>
 						<span className='time-icon'>
 							<img
-								src={require('../images/icons/icon-sun.svg').default}
+								src={
+									hours > 5 && hours < 18
+										? require('../images/icons/icon-sun.svg').default
+										: require('../images/icons/icon-moon.svg').default
+								}
 								alt=''
 							/>
 						</span>
 						<span className='clock-greet'>
-							Good Morning<span>, it's currently</span>
+							Good <span>{timeOfDay}</span>, it's currently
 						</span>
 					</p>
 					<h1 className='text-xxl clock-time'>
-						{`${hours}:${pad(minutes)}`}
+						{`${pad(hours)}:${pad(minutes)}`}
 						<span className='clock-timezone'>{clockData.abbreviation}</span>
 					</h1>
 				</div>
@@ -61,7 +74,13 @@ const Clock = ({ clockData, isExpanded, setIsExpanded }) => {
 					<div className='container clock-info-container'>
 						<div className='topic'>
 							<h2 className='text-s clock-info-title'>Current Timezone</h2>
-							<p className='text-xl clock-info-data'>{clockData.timezone}</p>
+							<p
+								className={`text-xl clock-info-data ${
+									timezone.length > 10 ? 'text-long' : ''
+								}`}
+							>
+								{timezone}
+							</p>
 						</div>
 						<div className='topic'>
 							<h2 className='text-s clock-info-title'>Day of the year</h2>
@@ -69,7 +88,9 @@ const Clock = ({ clockData, isExpanded, setIsExpanded }) => {
 						</div>
 						<div className='topic'>
 							<h2 className='text-s clock-info-title'>day of the week</h2>
-							<p className='text-xl clock-info-data'>{clockData.day_of_week}</p>
+							<p className='text-xl clock-info-data'>
+								{days[clockData.day_of_week]}
+							</p>
 						</div>
 						<div className='topic'>
 							<h2 className='text-s clock-info-title'>Week number</h2>

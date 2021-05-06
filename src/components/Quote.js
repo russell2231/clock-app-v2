@@ -1,5 +1,5 @@
 import FetchData from './FetchData';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Quote = ({ quoteData, isExpanded }) => {
 	const [data, setData] = useState(quoteData);
@@ -10,13 +10,17 @@ const Quote = ({ quoteData, isExpanded }) => {
 		setData(newQuote);
 	};
 
+	useEffect(() => {
+		setData(quoteData);
+	}, [quoteData]);
+
 	return (
 		<figure className={`container quote ${isExpanded ? 'expanded' : ''}`}>
 			<blockquote className='text-m quote-container'>
 				<p className='quote-content'>{`"${data.content}"`}</p>
 				<img
 					src={require('../images/icons/icon-refresh.png').default}
-					alt=''
+					alt='refresh quote'
 					className='refresh'
 					onClick={handleQuote}
 				/>
