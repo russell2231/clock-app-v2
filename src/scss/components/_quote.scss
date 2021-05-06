@@ -27,6 +27,10 @@
 		.refresh {
 			align-self: flex-start;
 			cursor: pointer;
+
+			&:hover {
+				opacity: 0.5;
+			}
 		}
 	}
 	.quote-author {

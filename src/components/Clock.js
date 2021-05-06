@@ -27,7 +27,7 @@ const Clock = ({ clockData, isExpanded, setIsExpanded, date, setDate }) => {
 		'Friday',
 		'Saturday',
 	];
-	let timezone = clockData.timezone.replace('_', ' ');
+	let timezone = clockData.timezone ? clockData.timezone.replace('_', ' ') : '';
 
 	const handleShowMore = () => {
 		if (isExpanded) {

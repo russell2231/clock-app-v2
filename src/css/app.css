@@ -591,6 +591,10 @@ html {
   }
 }
 
+.btn:hover {
+  opacity: 0.7;
+}
+
 .btn-icon {
   margin-left: 1.1rem;
   -webkit-transform: rotate(180deg);
@@ -821,6 +825,10 @@ html {
   -ms-flex-item-align: start;
       align-self: flex-start;
   cursor: pointer;
+}
+
+.quote .quote-container .refresh:hover {
+  opacity: 0.5;
 }
 
 .quote .quote-author {
